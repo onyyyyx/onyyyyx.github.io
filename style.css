@@ -46,7 +46,7 @@ footer a {
   color: white;
   text-decoration: none;
   box-shadow: #0d1117 0px 10px;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 .widget:hover {
   box-shadow: #0d1117 0px 15px;
@@ -64,22 +64,7 @@ footer a {
   margin-bottom: 0px;
 }
 
-/** Gallery **/
-.gallery {
-  background-color: #0d1117;
-  text-align: center;
-}
-.gallery img {
-  height: 30%;
-  margin: 2%;
-  transition: 0.5s;
-}
-.gallery img:hover {
-  height: 45%;
-}
-
-
-/* === removing default button style ===*/
+/** Sky **/
 .button {
   margin: 0;
   height: auto;
@@ -88,8 +73,6 @@ footer a {
   border: none;
   cursor: pointer;
 }
-
-/* button styling */
 .button {
   --border-right: 6px;
   --text-stroke-color: rgba(255,255,255,0.6);
@@ -104,7 +87,6 @@ footer a {
   color: transparent;
   -webkit-text-stroke: 1px var(--text-stroke-color);
 }
-/* this is the text, when you hover on button */
 .hover-text {
   position: absolute;
   box-sizing: border-box;
@@ -117,8 +99,62 @@ footer a {
   transition: 0.5s;
   -webkit-text-stroke: 1px var(--animation-color);
 }
-/* hover */
 .button:hover .hover-text {
   width: 100%;
   filter: drop-shadow(0 0 23px var(--animation-color))
+}
+
+/** Home **/
+.home {text-align: right; top: 20px;}
+.animated-link {
+  color: #213999;
+  margin-right: 50px;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  padding: 0 0.25em;
+  display: inline-block;
+  transition: color 0.2s, transform 0.2s;
+}
+.animated-link:before, .animated-link:after {
+  position: absolute;
+  top: -5px;
+  font-weight: 100;
+  font-size: 150%;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.animated-link:before {
+  left: -0.1em;
+  content: '[';
+  transform: translateX(-100%);
+}
+.animated-link:after {
+  right: -0.1em;
+  content: ']';
+  transform: translateX(100%);
+}
+.animated-link:hover {
+  color: #d04c3f;
+}
+.animated-link:hover:before, .animated-link:hover:after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/** Gallery **/
+.gallery {
+  background-color: #0d1117;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.gallery img {
+  height: 300px;
+  margin: 2%;
+  transition: 0.5s;
+}
+.gallery img:hover {
+  height: 400px;
 }
