@@ -46,6 +46,14 @@ footer a {
   color: white;
   text-decoration: none;
   box-shadow: #0d1117 0px 10px;
+  transition: 0.5s;
+}
+.widget:hover {
+  box-shadow: #0d1117 0px 15px;
+}
+.widget:active {
+  box-shadow: #0d1117 0px 5px;
+  bottom: 10px;
 }
 .widget img {
   max-width: 100%;
