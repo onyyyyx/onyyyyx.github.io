@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <link rel='stylesheet' type='text/css' href='style.css'>
   <link rel='icon' href='images/other/icon.png'>
+  <script src="script.js"></script>
 </head>
 
 <body>
@@ -14,7 +15,14 @@
       <span class="actual-text">&nbsp;sky&nbsp;</span>
       <span aria-hidden="true" class="hover-text">&nbsp;sky&nbsp;</span>
     </button>
-    <div class="home"><a href="index.html" class="animated-link">Home</a></div>
+    <div class="topnav" id="myTopnav">
+			<a href="index.html">Home</a>
+			<a href="moon.html" class="active">Moon</a>
+			<a href="stars.html">Stars</a>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
   </header>
   <main>
     <div class="gallery">
