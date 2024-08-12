@@ -16,8 +16,10 @@
 				aria-hidden="true" class="hover-text">&nbsp;sky&nbsp;</span></button>
 		<div class="topnav" id="myTopnav">
 			<a href="index.html">Home</a>
-			<a href="moon.html">Moon</a>
-			<a href="stars.html" class="active">Stars</a>
+			<a href="moon.php">Moon</a>
+			<a href="deepsky.php">Deep Sky</a>
+			<a href="openfield.php">Open Field</a>
+			<a href="stars.php" class="active">Stars</a>
 			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 				<i class="fa fa-bars"></i>
 			</a>
@@ -25,8 +27,14 @@
 	</header>
 	<main>
 		<div class="gallery">
-			<img src="images/Stars/IMG_2012.JPG" alt="Sirius"><img src="images/Stars/IMG_2013.JPG" alt="Sirius"><img
-				src="images/Stars/IMG_2014.JPG" alt="Sirius">
+		<?php
+          $files = scandir('images/stars');
+          foreach ($files as $f) {
+			if ($f === '.') { continue; }
+      	    elseif ($f === '..') { continue; }
+            echo('<img src="images/stars/' . $f . '">');
+          };
+        ?>
 		</div>
 	</main>
 	<footer>

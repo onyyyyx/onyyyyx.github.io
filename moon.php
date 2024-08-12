@@ -17,8 +17,10 @@
     </button>
     <div class="topnav" id="myTopnav">
 			<a href="index.html">Home</a>
-			<a href="moon.html" class="active">Moon</a>
-			<a href="stars.html">Stars</a>
+			<a href="moon.php" class="active">Moon</a>
+			<a href="stars.php">Stars</a>
+			<a href="deepsky.php">Deep Sky</a>
+			<a href="openfield.php">Open Field</a>
 			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 				<i class="fa fa-bars"></i>
 			</a>
@@ -27,9 +29,11 @@
   <main>
     <div class="gallery">
       <?php
-        $files = scandir('images/Moon');
+        $files = scandir('images/moon');
         foreach ($files as $f) {
-          echo('<img src="images/Moon/' . $f . '">');
+          if ($f === '.') { continue; }
+          elseif ($f === '..') { continue; }
+          echo('<img src="images/moon/' . $f . '">');
         };
       ?>
     </div>
