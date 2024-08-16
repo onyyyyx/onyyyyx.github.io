@@ -19,7 +19,7 @@ header {
 /** Footer **/
 footer {
   margin-top: auto;
-  background-color: #000;
+  background-color: #0c0c0c;
   padding: 2rem;
   text-align: center;
 }
@@ -73,7 +73,8 @@ footer a {
 }
 
 .widget:hover {
-  box-shadow: #0d1117 0px 15px;
+  transform: scale(1.1);
+  
 }
 
 .widget:active {
