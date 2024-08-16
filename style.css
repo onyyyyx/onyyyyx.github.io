@@ -75,7 +75,6 @@ footer a {
 
 .widget:hover {
   transform: scale(1.1);
-  
 }
 
 .widget:active {
@@ -85,6 +84,7 @@ footer a {
 
 .widget img {
   max-width: 100%;
+  border-radius: 5px;
   height: auto;
 }
 
@@ -156,7 +156,7 @@ footer a {
 }
 .topnav a.active {
   background-color: #37FF8B;
-  color: white;
+  color: black;
 }
 .topnav .icon {
   display: none;
