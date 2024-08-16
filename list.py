@@ -7,6 +7,7 @@ html_files = [
     {"file": "deepsky.html", "dir": "images/deepsky/"},
     {"file": "moon.html", "dir": "images/moon/"},
     {"file": "openfield.html", "dir": "images/openfield/"},
+    {"file": "planets.html", "dir": "images/planets/"}
 ]
 
 # Iterate over the HTML files and directories

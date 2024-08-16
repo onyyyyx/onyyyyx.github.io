@@ -41,11 +41,14 @@ footer a {
 .gallery img {
   height: 100px;
   margin: 2%;
+  border-radius: 10px;
   transition: 0.5s;
 }
 
 .gallery img:active {
-  height: 450px;
+  transform: scale(4.5);
+  border-radius: 5px;
+  box-shadow: 0px 0px 50px 50px rgba(0,0,0,0.5);
 }
 
 
