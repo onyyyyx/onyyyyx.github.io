@@ -46,12 +46,21 @@ footer a {
   transition: 0.5s;
 }
 
+/* Styles par défaut pour les écrans de grande taille (ordinateurs) */
 .gallery img:active {
   transform: scale(4.5);
   border-radius: 5px;
-  box-shadow: 0px 0px 50px 50px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 50px 50px rgba(0, 0, 0, 0.5);
 }
 
+/* Styles pour les écrans tactiles de petite taille (mobiles) */
+@media (hover: none) and (pointer: coarse) {
+  .gallery img:hover {
+    transform: scale(4.5);
+    border-radius: 5px;
+    box-shadow: 0px 0px 50px 50px rgba(0, 0, 0, 0.5);
+  }
+}
 
 /** Widget **/
 .widgets-div {
