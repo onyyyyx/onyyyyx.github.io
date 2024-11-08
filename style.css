@@ -43,6 +43,8 @@ footer a {
   height: 100px;
   margin: 2%;
   border-radius: 10px;
+  aspect-ratio: 3/2;
+  object-fit: contain;
   transition: 0.5s;
 }
 
