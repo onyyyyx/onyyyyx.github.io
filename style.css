@@ -28,7 +28,6 @@ footer a {
   color: white;
 }
 
-
 /** Gallery **/
 .gallery {
   background-color: #0d1117;
@@ -116,7 +115,7 @@ footer a {
   cursor: pointer;
   --border-right: 6px;
   --text-stroke-color: rgba(255, 255, 255, 0.6);
-  --animation-color: #37FF8B;
+  --animation-color: #37ff8b;
   --fs-size: 2em;
   letter-spacing: 3px;
   text-decoration: none;
@@ -143,7 +142,7 @@ footer a {
 
 .button:hover .hover-text {
   width: 100%;
-  filter: drop-shadow(0 0 23px var(--animation-color))
+  filter: drop-shadow(0 0 23px var(--animation-color));
 }
 
 /** Menu **/
@@ -166,21 +165,25 @@ footer a {
   color: black;
 }
 .topnav a.active {
-  background-color: #37FF8B;
+  background-color: #37ff8b;
   color: black;
 }
 .topnav .icon {
   display: none;
 }
 @media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
+  .topnav a:not(:first-child) {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;
   }
 }
 @media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    position: relative;
+  }
   .topnav.responsive a.icon {
     position: absolute;
     right: 0;
