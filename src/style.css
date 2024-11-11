@@ -1,0 +1,255 @@
+html {
+  height: 1lvh;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #16191f;
+  font-family: Arial, Helvetica;
+  color: white;
+}
+
+header {
+  width: 100%;
+  min-height: 3em;
+  background-color: #16191f;
+  box-sizing: border-box;
+  padding: 1em;
+  transition: .5s;
+}
+
+/* main {padding: 6em 0;} */
+
+/** Footer **/
+footer {
+  margin-top: auto;
+  background-color: #0c0c0c;
+  padding: 2rem;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+}
+
+.visually-hidden {
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.btn-group {
+  display: block;
+  /* justify-content: center; */
+  text-align: center;
+  justify-content: space-evenly;
+}
+.btn {
+  border: 0.2rem solid #4d4d4d;
+  cursor: pointer;
+  padding: 0.8rem 1rem 0.7rem;
+  border-radius: 20px;
+  margin: 10px 10px;
+  text-transform: capitalize;
+}
+.btn.toggle-btn {
+  border-color: #4d4d4d;
+  border-width: 2px;
+  transition: 0.5s ease-in-out;
+}
+.btn.toggle-btn[aria-pressed="true"] {
+  border-color: #fff;
+  text-decoration: underline;
+  box-shadow: 0 0 30px white;
+}
+.btn__filter {
+  border-color: lightgrey;
+}
+button {
+  -moz-osx-font-smoothing: inherit;
+  -webkit-font-smoothing: inherit;
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+  width: auto;
+}
+button::-moz-focus-inner {
+  border: 0;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+button,
+input {
+  overflow: visible;
+}
+
+.gallery {
+  background-color: #0d1117;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  display: block;
+}
+
+.gallery img {
+  height: 20lvw;
+  margin: 2%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  transition: 0.5s;
+  border-radius: 10px;
+}
+
+/* 
+.widgets-div {
+  text-align: center;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.widget {
+  background-color: rgb(37, 42, 48);
+  border-radius: 8%;
+  width: 20%;
+  padding: 20px;
+  text-align: center;
+  margin: 2%;
+  color: white;
+  text-decoration: none;
+  box-shadow: #0d1117 0px 10px;
+  transition: 0.2s;
+}
+
+.widget:hover {
+  transform: scale(1.1);
+}
+
+.widget:active {
+  box-shadow: #0d1117 0px 5px;
+  bottom: 10px;
+}
+
+.widget img {
+  max-width: 100%;
+  border-radius: 5px;
+  height: auto;
+}
+
+.widget p {
+  margin: 10px 0;
+  margin-bottom: 0px;
+} */
+
+/** Sky **/
+.button {
+  margin: 0;
+  margin-left: 10%;
+  margin-bottom: 20px;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  --border-right: 6px;
+  --text-stroke-color: rgba(255, 255, 255, 0.6);
+  --animation-color: #37ff8b;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
+}
+
+/** Menu **/
+.topnav {
+  margin-left: 2%;
+  overflow: hidden;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.5s;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.topnav a.active {
+  background-color: #37ff8b;
+  color: black;
+}
+.topnav .icon {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
