@@ -41,10 +41,10 @@ footer a {
 .gallery img {
   height: 300px;
   margin: 2%;
-  border-radius: 10px;
   aspect-ratio: 3/2;
   object-fit: contain;
   transition: 0.5s;
+  border-radius: 10px;
 }
 
 /* Styles par défaut pour les écrans de grande taille (ordinateurs) */
