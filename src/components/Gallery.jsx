@@ -1,5 +1,5 @@
 function Gallery(props) {
-  return <img src={"/images/" + props.location} />;
+  return <img id={props.id} src={"/images/" + props.location} />;
 }
 
 export default Gallery;
