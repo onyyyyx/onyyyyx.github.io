@@ -115,8 +115,6 @@ input {
 .gallery img {
   height: 20lvw;
   margin: 2%;
-  aspect-ratio: 3/2;
-  object-fit: contain;
   transition: 0.5s;
   border-radius: 10px;
 }
