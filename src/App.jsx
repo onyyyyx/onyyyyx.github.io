@@ -1,4 +1,4 @@
-import Gallery from "./components/Gallery";
+import Image from "./components/Image";
 import FilterButton from "./components/FilterButton";
 import { useState } from "react";
 import { nanoid } from "nanoid";
@@ -19,7 +19,7 @@ function App(props) {
   const imagesList = props.images
     .filter(FILTER_MAP[filter])
     .map((image) => (
-      <Gallery
+      <Image
         id={image.id}
         location={image.location}
         type={image.type}
@@ -38,18 +38,16 @@ function App(props) {
   return (
     <main>
       <header>
-        <button class="button" data-text="Awesome">
-          <span class="actual-text">&nbsp;sky&nbsp;</span>
-          <span aria-hidden="true" class="hover-text">
+        <button className="button" data-text="Awesome">
+          <span className="actual-text">&nbsp;sky&nbsp;</span>
+          <span aria-hidden="true" className="hover-text">
             &nbsp;sky&nbsp;
           </span>
         </button>
         <div className="filters btn-group stack-exception">{filterList}</div>
       </header>
       <div className="gallery">
-        <ul role="list" className="" aria-labelledby="list-heading">
           {imagesList}
-        </ul>
       </div>
     </main>
   );

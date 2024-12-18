@@ -77,8 +77,16 @@ const DATA = [
   { id: `todo-${nanoid()}`, location: "stars/Sirius(02).webp", type: 1 },
   { id: `todo-${nanoid()}`, location: "stars/Sirius(01).webp", type: 1 },
   { id: `todo-${nanoid()}`, location: "deepsky/IMG_3453.webp", type: 2 },
-  { id: `todo-${nanoid()}`, location: "deepsky/Ring_Nebulae(01).webp", type: 2 },
-  { id: `todo-${nanoid()}`, location: "deepsky/Ring_Nebulae(02).webp", type: 2 },
+  {
+    id: `todo-${nanoid()}`,
+    location: "deepsky/Ring_Nebulae(01).webp",
+    type: 2,
+  },
+  {
+    id: `todo-${nanoid()}`,
+    location: "deepsky/Ring_Nebulae(02).webp",
+    type: 2,
+  },
   { id: `todo-${nanoid()}`, location: "deepsky/IMG_3451.webp", type: 2 },
   { id: `todo-${nanoid()}`, location: "deepsky/M110.webp", type: 2 },
   { id: `todo-${nanoid()}`, location: "deepsky/IMG_3448.webp", type: 2 },
@@ -92,7 +100,6 @@ const DATA = [
   { id: `todo-${nanoid()}`, location: "deepsky/M13.webp", type: 2 },
   { id: `todo-${nanoid()}`, location: "deepsky/Andromede.webp", type: 2 },
   { id: `todo-${nanoid()}`, location: "deepsky/IMG_3447.webp", type: 2 },
-  { id: `todo-${nanoid()}`, location: "openfield/IMAGE_153.webp", type: 3 },
   { id: `todo-${nanoid()}`, location: "openfield/processed.webp", type: 3 },
   {
     id: `todo-${nanoid()}`,

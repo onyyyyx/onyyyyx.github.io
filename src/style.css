@@ -8,7 +8,7 @@ body {
   flex-direction: column;
   background-color: #16191f;
   font-family: Arial, Helvetica;
-  color: white;
+  color: #ededed;
 }
 
 header {
@@ -17,7 +17,7 @@ header {
   background-color: #16191f;
   box-sizing: border-box;
   padding: 1em;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 /* main {padding: 6em 0;} */
@@ -31,7 +31,7 @@ footer {
 }
 
 footer a {
-  color: white;
+  color: #ededed;
 }
 
 .visually-hidden {
@@ -66,7 +66,7 @@ footer a {
 .btn.toggle-btn[aria-pressed="true"] {
   border-color: #fff;
   text-decoration: underline;
-  box-shadow: 0 0 30px white;
+  box-shadow: 0 0 30px #ededed;
 }
 .btn__filter {
   border-color: lightgrey;
@@ -103,63 +103,34 @@ input {
   overflow: visible;
 }
 
+/* Gallery */
 .gallery {
-  background-color: #0d1117;
-  border-radius: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  display: block;
+  width: 80%;
+  background: #0c0c0c;
+  margin: 20px auto;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 0 30px #ededed;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 250px));
+  gap: 50px;
+  justify-content: center;
+  align-content: center;
+  .image {
+    #loader {
+      margin: -55px auto auto auto;
+      transform: translateY(140px) translateX(-5px);
+    }
+    img {
+      border-radius: 30px;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+  }
 }
 
-.gallery img {
-  height: 20lvw;
-  margin: 2%;
-  transition: 0.5s;
-  border-radius: 10px;
-}
-
-/* 
-.widgets-div {
-  text-align: center;
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.widget {
-  background-color: rgb(37, 42, 48);
-  border-radius: 8%;
-  width: 20%;
-  padding: 20px;
-  text-align: center;
-  margin: 2%;
-  color: white;
-  text-decoration: none;
-  box-shadow: #0d1117 0px 10px;
-  transition: 0.2s;
-}
-
-.widget:hover {
-  transform: scale(1.1);
-}
-
-.widget:active {
-  box-shadow: #0d1117 0px 5px;
-  bottom: 10px;
-}
-
-.widget img {
-  max-width: 100%;
-  border-radius: 5px;
-  height: auto;
-}
-
-.widget p {
-  margin: 10px 0;
-  margin-bottom: 0px;
-} */
-
-/** Sky **/
+/** Sky title **/
 .button {
   margin: 0;
   margin-left: 10%;
