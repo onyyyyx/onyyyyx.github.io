@@ -1,10 +1,12 @@
 import Image from "./components/Image";
 import FilterButton from "./components/FilterButton";
 import { useState } from "react";
-import { nanoid } from "nanoid";
+import DetailedView from "./components/DetailedView";
 
 function App(props) {
   const [filter, setFilter] = useState("All");
+  const [detailed, setDetailed] = useState(false);
+
   const FILTER_MAP = {
     All: () => true,
     Moon: (i) => i.type === 0,
@@ -15,7 +17,6 @@ function App(props) {
   };
 
   const FILTER_NAMES = Object.keys(FILTER_MAP);
-
   const imagesList = props.images
     .filter(FILTER_MAP[filter])
     .map((image) => (
@@ -24,6 +25,7 @@ function App(props) {
         location={image.location}
         type={image.type}
         key={image.id}
+        setDetailed={setDetailed}
       />
     ));
   const filterList = FILTER_NAMES.map((name) => (
@@ -46,9 +48,8 @@ function App(props) {
         </button>
         <div className="filters btn-group stack-exception">{filterList}</div>
       </header>
-      <div className="gallery">
-          {imagesList}
-      </div>
+      <div className="gallery">{imagesList}</div>
+      {detailed !== false ? <DetailedView id={detailed} images={props.images} setDetailed={setDetailed} /> : ""}
     </main>
   );
 }

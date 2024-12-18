@@ -1,4 +1,4 @@
-import RingLoader from "react-spinners/RingLoader"
+import RingLoader from "react-spinners/RingLoader";
 import { useState } from "react";
 
 function Image(props) {
@@ -8,7 +8,7 @@ function Image(props) {
     setLoading(false);
   };
   return (
-    <div className="image">
+    <div className="image" onClick={() => props.setDetailed(props.id)}>
       {loading && <Loader />}
       <img
         id={props.id}
