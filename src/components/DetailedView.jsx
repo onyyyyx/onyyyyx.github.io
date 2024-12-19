@@ -12,7 +12,7 @@ function DetailedView(props) {
       <div className="content">
         <header>
           <p>{image.location.split("/").slice(-1)}</p>
-          <p onClick={() => props.setDetailed(false)}>&#x2715;</p>
+          <p onClick={() => props.handleDetailed(false)}>&#x2715;</p>
         </header>
         <img src={"/images/" + image.location} alt="" />
       </div>

@@ -25,7 +25,7 @@ function App(props) {
         location={image.location}
         type={image.type}
         key={image.id}
-        setDetailed={setDetailed}
+        handleDetailed={handleDetailed}
       />
     ));
   const filterList = FILTER_NAMES.map((name) => (
@@ -36,6 +36,13 @@ function App(props) {
       setFilter={setFilter}
     />
   ));
+
+  function handleDetailed(val) {
+    setDetailed(val);
+    document.querySelector("body").style.overflow =
+      val !== false ? "hidden" : "scroll";
+    console.log(val);
+  }
 
   return (
     <main>
@@ -49,7 +56,15 @@ function App(props) {
         <div className="filters btn-group stack-exception">{filterList}</div>
       </header>
       <div className="gallery">{imagesList}</div>
-      {detailed !== false ? <DetailedView id={detailed} images={props.images} setDetailed={setDetailed} /> : ""}
+      {detailed !== false ? (
+        <DetailedView
+          id={detailed}
+          images={props.images}
+          handleDetailed={handleDetailed}
+        />
+      ) : (
+        ""
+      )}
     </main>
   );
 }
