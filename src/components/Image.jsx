@@ -8,7 +8,7 @@ function Image(props) {
     setLoading(false);
   };
   return (
-    <div className="image" onClick={() => props.handleDetailed(props.id)}>
+    <div className="image" role="button" onClick={() => props.handleDetailed(props.id)}>
       {loading && <Loader />}
       <img
         id={props.id}

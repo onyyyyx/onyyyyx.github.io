@@ -1,121 +1,41 @@
-import { StrictMode } from "react";
+import { StrictMode, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./style.css";
 import App from "./App.jsx";
 import { nanoid } from "nanoid";
+import Papa from "papaparse";
 
-const DATA = [
-  { id: `todo-${nanoid()}`, location: "moon/image_007.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_010.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_030.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_036.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_018.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_062.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_027.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_024.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_028.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_017.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_001.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_040.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_026.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_035.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_056.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_033.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_012.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_060.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_011.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_053.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_013.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_049.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_045.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_052.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_016.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_048.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_044.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_039.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_037.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_014.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_005.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_004.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_006.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_022.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_061.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_003.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_041.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_050.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_020.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_031.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_047.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_059.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_019.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_034.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_046.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_009.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_038.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_042.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_021.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_029.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_015.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_063.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_057.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_032.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_051.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_058.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_043.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_064.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_055.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_023.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_008.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_002.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_054.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "moon/image_025.webp", type: 0 },
-  { id: `todo-${nanoid()}`, location: "stars/Alcor_and_Mizar.webp", type: 1 },
-  { id: `todo-${nanoid()}`, location: "stars/IMG_3058.webp", type: 1 },
-  { id: `todo-${nanoid()}`, location: "stars/Altair.webp", type: 1 },
-  { id: `todo-${nanoid()}`, location: "stars/IMG_3409.webp", type: 1 },
-  { id: `todo-${nanoid()}`, location: "stars/Sirius(03).webp", type: 1 },
-  { id: `todo-${nanoid()}`, location: "stars/Sirius(02).webp", type: 1 },
-  { id: `todo-${nanoid()}`, location: "stars/Sirius(01).webp", type: 1 },
-  { id: `todo-${nanoid()}`, location: "deepsky/IMG_3453.webp", type: 2 },
-  {
-    id: `todo-${nanoid()}`,
-    location: "deepsky/Ring_Nebulae(01).webp",
-    type: 2,
-  },
-  {
-    id: `todo-${nanoid()}`,
-    location: "deepsky/Ring_Nebulae(02).webp",
-    type: 2,
-  },
-  { id: `todo-${nanoid()}`, location: "deepsky/IMG_3451.webp", type: 2 },
-  { id: `todo-${nanoid()}`, location: "deepsky/M110.webp", type: 2 },
-  { id: `todo-${nanoid()}`, location: "deepsky/IMG_3448.webp", type: 2 },
-  { id: `todo-${nanoid()}`, location: "deepsky/IMG_2925.webp", type: 2 },
-  {
-    id: `todo-${nanoid()}`,
-    location: "deepsky/Tsuchinshan-ATLAS.webp",
-    type: 2,
-  },
-  { id: `todo-${nanoid()}`, location: "deepsky/IMG_3452.webp", type: 2 },
-  { id: `todo-${nanoid()}`, location: "deepsky/M13.webp", type: 2 },
-  { id: `todo-${nanoid()}`, location: "deepsky/Andromede.webp", type: 2 },
-  { id: `todo-${nanoid()}`, location: "deepsky/IMG_3447.webp", type: 2 },
-  { id: `todo-${nanoid()}`, location: "openfield/processed.webp", type: 3 },
-  {
-    id: `todo-${nanoid()}`,
-    location: "openfield/962351E9-46EC-453A-9E8F-AF80298616E6.webp",
-    type: 3,
-  },
-  { id: `todo-${nanoid()}`, location: "openfield/processed2.webp", type: 3 },
-  { id: `todo-${nanoid()}`, location: "planets/Saturn(01).webp", type: 4 },
-  { id: `todo-${nanoid()}`, location: "planets/Saturn(02).webp", type: 4 },
-  { id: `todo-${nanoid()}`, location: "planets/Jupiter.webp", type: 4 },
-];
+function Main() {
+  const [data, setData] = useState([]);
 
-const TYPES = ["Moon", "Stars", "Deep Sky", "Open Field", "Planetary"];
+  useEffect(() => {
+    // Charger et parser le fichier CSV
+    fetch("/data.csv")
+      .then((response) => response.text())
+      .then((csv) => {
+        const parsed = Papa.parse(csv, {
+          header: true, // Considère la première ligne comme en-tête
+          skipEmptyLines: true, // Ignore les lignes vides
+        });
 
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <App images={DATA} />
-  </StrictMode>
-);
+        // Mapper chaque ligne en un objet avec la structure souhaitée
+        const formattedData = parsed.data.map((row) => ({
+          id: `img-${nanoid()}`,
+          name: row.name,
+          location: row.location,
+          type: row.type,
+        }));
+
+        setData(formattedData);
+      })
+      .catch((err) => console.error("Erreur lors du chargement du CSV :", err));
+  }, []);
+
+  return (
+    <StrictMode>
+      <App images={data} />
+    </StrictMode>
+  );
+}
+
+createRoot(document.getElementById("root")).render(<Main />);

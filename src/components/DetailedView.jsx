@@ -7,14 +7,16 @@ function DetailedView(props) {
     }
   }
 
+  console.log(props.folders[image.type]+image.location);
+
   return (
     <div className="detailed">
       <div className="content">
         <header>
-          <p>{image.location.split("/").slice(-1)}</p>
-          <p onClick={() => props.handleDetailed(false)}>&#x2715;</p>
+          <p>{image.name}</p>
+          <p role="button" onClick={() => props.handleDetailed(false)}>&#x2715;</p>
         </header>
-        <img src={"/images/" + image.location} alt="" />
+        <img src={"/images/" + props.folders[image.type] + image.location} />
       </div>
     </div>
   );
