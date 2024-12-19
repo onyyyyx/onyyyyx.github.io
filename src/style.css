@@ -7,7 +7,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #16191f;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #ededed;
   padding: 10px;
 }
@@ -26,12 +26,48 @@ header {
     padding-right: 50px;
     align-items: baseline;
     #about {
-      color: #37ff8b;
+      font-size: x-small;
+      background-color: #ededed;
+      color: #0c0c0c;
+      border-radius: 20px;
+      padding: 5px;
     }
   }
 }
 
-/* main {padding: 6em 0;} */
+.about {
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: #37ff8b;
+  }
+  .icons {
+    .logo {
+      height: 6em;
+      padding: 1.5em;
+      will-change: filter;
+      transition: filter 300ms;
+    }
+    .logo:hover {
+      filter: drop-shadow(0 0 2em #646cffaa);
+    }
+    .logo.react:hover {
+      filter: drop-shadow(0 0 2em #61dafbaa);
+    }
+  }
+  legend {
+    font-size: small;
+  }
+  #scope {
+    width: 60%;
+    background-color: #0c0c0c;
+    border-radius: 30px;
+    padding: 10px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    margin: 10px auto;
+  }
+}
 
 /** Footer **/
 footer {

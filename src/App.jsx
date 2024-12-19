@@ -2,10 +2,12 @@ import Image from "./components/Image";
 import FilterButton from "./components/FilterButton";
 import { useState } from "react";
 import DetailedView from "./components/DetailedView";
+import AboutView from "./components/AboutView";
 
 function App(props) {
   const [filter, setFilter] = useState("All");
   const [detailed, setDetailed] = useState(false);
+  const [about, setAbout] = useState(false);
 
   const FILTER_MAP = {
     All: () => true,
@@ -45,8 +47,8 @@ function App(props) {
       val !== false ? "hidden" : "scroll";
   }
 
-  return (
-    <main>
+  const HomeView = (
+    <>
       <header>
         <div className="top-header">
           <button className="button" data-text="Awesome">
@@ -55,23 +57,28 @@ function App(props) {
               &nbsp;sky&nbsp;
             </span>
           </button>
-          <p role="button" id="about">About</p>
+          <p role="button" id="about" onClick={() => setAbout(true)}>
+            About
+          </p>
         </div>
         <div className="filters btn-group stack-exception">{filterList}</div>
       </header>
-      <div className="gallery">{imagesList}</div>
-      {detailed !== false ? (
-        <DetailedView
-          id={detailed}
-          images={props.images}
-          handleDetailed={handleDetailed}
-          folders={folders}
-        />
-      ) : (
-        ""
-      )}
-    </main>
+      <main>
+        <div className="gallery">{imagesList}</div>
+        {detailed !== false ? (
+          <DetailedView
+            id={detailed}
+            images={props.images}
+            handleDetailed={handleDetailed}
+            folders={folders}
+          />
+        ) : (
+          ""
+        )}
+      </main>
+    </>
   );
+  return about ? <AboutView setAbout={setAbout} /> : HomeView;
 }
 
 export default App;

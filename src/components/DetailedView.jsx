@@ -7,7 +7,6 @@ function DetailedView(props) {
     }
   }
 
-  console.log(props.folders[image.type]+image.location);
 
   return (
     <div className="detailed">
